@@ -11,7 +11,8 @@ Changes made:
 - removed dependency on [JaxUtils](https://github.com/JaxGaussianProcesses/JaxUtils) by incorporating JaxUtils PyTree implementation into this fork.
 
 Todo:
-- [ ] Remove package dependency on JaxUtils  
+- [ ] Remove package dependency on JaxUtils
+- [ ] Remove Coverage files
 
 ## Introduction
 
