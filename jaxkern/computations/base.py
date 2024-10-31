@@ -23,7 +23,9 @@ from jaxlinop import (
     LinearOperator,
 )
 from jaxtyping import Array, Float
-from jaxutils import PyTree
+
+# from jaxutils import PyTree
+from ..pytree import PyTree
 
 
 class AbstractKernelComputation(PyTree):

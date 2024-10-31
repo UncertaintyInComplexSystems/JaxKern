@@ -17,7 +17,7 @@ from typing import Dict, List, Optional
 
 import jax
 import jax.numpy as jnp
-from jax.random import KeyArray
+# from jax.random import KeyArray
 from jaxtyping import Array
 
 from ..base import AbstractKernel
@@ -63,7 +63,7 @@ class Periodic(AbstractKernel):
         K = params["variance"] * jnp.exp(-0.5 * jnp.sum(sine_squared, axis=0))
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         return {
             "lengthscale": jnp.array([1.0] * self.ndims),
             "variance": jnp.array([1.0]),

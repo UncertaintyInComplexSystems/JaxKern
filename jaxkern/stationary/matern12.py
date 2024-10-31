@@ -16,7 +16,7 @@
 from typing import Dict, List, Optional
 
 import jax.numpy as jnp
-from jax.random import KeyArray
+# # from jax.random import KeyArray
 from jaxtyping import Array, Float
 
 from ..base import AbstractKernel
@@ -62,7 +62,7 @@ class Matern12(AbstractKernel):
         K = params["variance"] * jnp.exp(-euclidean_distance(x, y))
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         return {
             "lengthscale": jnp.array([1.0] * self.ndims),
             "variance": jnp.array([1.0]),

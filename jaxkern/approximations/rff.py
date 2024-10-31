@@ -1,7 +1,7 @@
 from ..base import AbstractKernel
 from ..computations import BasisFunctionComputation
-from jax.random import KeyArray
 from typing import Dict, Any
+from jaxtyping import Array
 
 
 class RFF(AbstractKernel):
@@ -38,7 +38,7 @@ class RFF(AbstractKernel):
         # Inform the compute engine of the number of basis functions
         self.compute_engine.num_basis_fns = num_basis_fns
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         """Initialise the parameters of the RFF approximation.
 
         Args:

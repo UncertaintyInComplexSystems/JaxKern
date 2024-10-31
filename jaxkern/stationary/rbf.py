@@ -17,7 +17,7 @@ from typing import Dict, List, Optional
 
 import jax
 import jax.numpy as jnp
-from jax.random import KeyArray
+# # from jax.random import KeyArray
 from jaxtyping import Array, Float
 
 from ..base import AbstractKernel
@@ -66,7 +66,7 @@ class RBF(AbstractKernel):
         K = params["variance"] * jnp.exp(-0.5 * squared_distance(x, y))
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         params = {
             "lengthscale": jnp.array([1.0] * self.ndims),
             "variance": jnp.array([1.0]),

@@ -16,7 +16,7 @@
 from typing import Dict, List, Optional
 
 import jax.numpy as jnp
-from jax.random import KeyArray
+# from jax.random import KeyArray
 from jaxtyping import Array, Float
 
 from ..computations import EigenKernelComputation
@@ -81,7 +81,7 @@ class GraphKernel(AbstractKernel):
         )  # shape (n,n)
         return Kxx.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         """Initialise the lengthscale, variance and smoothness parameters of the kernel"""
         return {
             "lengthscale": jnp.array([1.0] * self.ndims),

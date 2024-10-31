@@ -17,7 +17,7 @@ from typing import List, Optional
 
 import jax
 import jax.numpy as jnp
-from jax.random import KeyArray
+# from jax.random import KeyArray
 from jaxtyping import Array
 
 from ..base import AbstractKernel
@@ -58,7 +58,7 @@ class RationalQuadratic(AbstractKernel):
         ) ** (-params["alpha"])
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> dict:
+    def init_params(self, key: Array) -> dict:
         return {
             "lengthscale": jnp.array([1.0] * self.ndims),
             "variance": jnp.array([1.0]),

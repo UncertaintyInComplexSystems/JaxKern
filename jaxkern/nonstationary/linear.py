@@ -17,7 +17,7 @@ from typing import Dict, List, Optional
 
 import jax
 import jax.numpy as jnp
-from jax.random import KeyArray
+# # from jax.random import KeyArray
 from jaxtyping import Array
 
 from ..base import AbstractKernel
@@ -64,5 +64,5 @@ class Linear(AbstractKernel):
         K = params["variance"] * jnp.matmul(x.T, y)
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         return {"variance": jnp.array([1.0])}

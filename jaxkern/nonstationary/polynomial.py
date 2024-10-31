@@ -16,7 +16,7 @@
 from typing import Dict, List, Optional
 
 import jax.numpy as jnp
-from jax.random import KeyArray
+# # from jax.random import KeyArray
 from jaxtyping import Array, Float
 
 from ..base import AbstractKernel
@@ -66,7 +66,7 @@ class Polynomial(AbstractKernel):
         K = jnp.power(params["shift"] + jnp.dot(x * params["variance"], y), self.degree)
         return K.squeeze()
 
-    def init_params(self, key: KeyArray) -> Dict:
+    def init_params(self, key: Array) -> Dict:
         return {
             "shift": jnp.array([1.0]),
             "variance": jnp.array([1.0] * self.ndims),
